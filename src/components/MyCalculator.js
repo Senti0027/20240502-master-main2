@@ -12,6 +12,7 @@ function myCalculator(){
     }
     return(
         <div className="calculator">
+            <h1>計算結果</h1>
             <MyDisplay result={result}/>
             <MyButton buttonClicked={handleClick}/>
         </div>
