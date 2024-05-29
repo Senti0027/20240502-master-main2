@@ -56,7 +56,7 @@ function MyCalculator() {
             case "%":
                 if (result != "") {
 
-                    setResult(parseInt(result, 10) / 100);
+                    setResult(parseFloat(result, 10) / 100);
                 }
                 break;
             default:
