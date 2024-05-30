@@ -2,7 +2,7 @@ import './App.css';
 import MyRGBPanel from './components/rgb-panel/MyRGBPanel';
 import MySlider from './components/rgb-panel/MySlider';
 import MyCalaulator from './components/Calculator/MyCalculator';
-import TicTacToe from './components/Tic-Tac-Toe/Tic-Tac-Toe';
+import TicTacToegame from './components/Tic-Tac-Toe/Tic-Tac-Toe';
 
 function App() {
 
@@ -19,7 +19,8 @@ function App() {
         <MyRGBPanel />
         <h1>MyCalculator</h1>
         <MyCalaulator/>
-        
+        <h1>TicTacToegame</h1>
+        <TicTacToegame/>
     </div>
 
     

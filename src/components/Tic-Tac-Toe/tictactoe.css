@@ -1,0 +1,33 @@
+.square{
+    background-color: aliceblue;
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    font-size: large;
+    font-weight: bold;
+    cursor:pointer;
+    line-height:50px;
+    margin:auto;
+    float:left;
+    text-align:center;
+}
+
+.game{
+    width:400px;
+    margin:auto;
+    border:3px solid lightblue;
+    border-radius: 20px;
+    padding:20px;
+}
+.tic-tac-toe-board{
+    background-color: aquamarine;
+    border-radius: 10px;
+    padding:10px;
+
+}
+
+.board-row:after{
+    clear:both;
+    content:'';
+    display:table;
+}
