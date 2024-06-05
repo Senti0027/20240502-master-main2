@@ -2,9 +2,9 @@ import React from "react";
 import Square from "./Square";
 import './tictactoe.css';
 
-function Board({xIsNext, squares, onPlay}) {
-    const handleClick = (i) => {
-        const nextSquares = squares.slice()
+function Board({xIsNext, squares, onPlay}) {//xTsNext:指示下一個下棋的玩家是 "X" 還是 "O"
+    const handleClick = (i) => {//square:每個元素對應棋盤上的一個方格並儲存其值
+        const nextSquares = squares.slice()//onPlay:當某個方格被點擊時會被調用，並將更新後的 squares 陣列傳遞回去。
         if (xIsNext) {
             nextSquares[i] = "X";
         }
@@ -14,7 +14,7 @@ function Board({xIsNext, squares, onPlay}) {
         onPlay(nextSquares);
     };
 
-    let status = "玩家資訊";
+    let status = `下一位玩家: ${xIsNext ? "X" : "O"}`;
     return (
         <>
             <div className="status">{status}</div>
