@@ -2,7 +2,7 @@ import React from "react";
 import Square from "./Square";
 import './tictactoe.css';
 
-function Board({xIsNext, squares, onPlay}) {//xTsNext:指示下一個下棋的玩家是 "X" 還是 "O"
+function Board({ xIsNext, squares, onPlay }) {//xTsNext:指示下一個下棋的玩家是 "X" 還是 "O"
     const handleClick = (i) => {//square:每個元素對應棋盤上的一個方格並儲存其值
         const nextSquares = squares.slice()//onPlay:當某個方格被點擊時會被調用，並將更新後的 squares 陣列傳遞回去。
         if (xIsNext) {
@@ -12,6 +12,24 @@ function Board({xIsNext, squares, onPlay}) {//xTsNext:指示下一個下棋的�
             nextSquares[i] = "O";
         }
         onPlay(nextSquares);
+    };
+    const calaulateWinner = (square) => {
+        const lines = [
+            [0, 1, 2],
+            [3, 4, 5],
+            [6, 7, 8],
+            [0, 3, 6],
+            [1, 4, 7],
+            [2, 5, 8],
+            [0, 4, 8],
+            [2, 4, 6]
+        ];
+        for(let i=0;i<lines.length-1;i++){
+            const[a,b,c]=lines[i];
+            if(squares[a]&&squares[a]===squares[b]&&aquares[a]===squares[c]){
+                return square[a];
+            }
+        }
     };
 
     let status = `下一位玩家: ${xIsNext ? "X" : "O"}`;
