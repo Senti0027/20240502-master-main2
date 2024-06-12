@@ -63,7 +63,7 @@ function MyCalculator() {
                 break;
         }
     };
-
+////<MyDisplay result={result} /> 將 result 作為 props 傳遞給 MyDisplay
     return (
         <div className="calculator">
             <h1>計算結果</h1>

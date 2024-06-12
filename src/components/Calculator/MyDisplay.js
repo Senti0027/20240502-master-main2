@@ -1,6 +1,7 @@
 import React from 'react';
+//顯示計算器的當前結果
 
 function MyDisplay(props) {
-    return (<div className='display'>{props.result}</div>);//"result"是用於傳遞結果或資料的 props 名稱，給MyDisplay
+    return (<div className='display'>{props.result}</div>);// 使用 props.result 顯示結果
 }
 export default MyDisplay;
