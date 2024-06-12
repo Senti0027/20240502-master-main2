@@ -26,7 +26,7 @@ function Board({ xIsNext, squares, onPlay }) {//xTsNext:指示下一個下棋的
         ];
         for(let i=0;i<lines.length-1;i++){
             const[a,b,c]=lines[i];
-            if(squares[a]&&squares[a]===squares[b]&&aquares[a]===squares[c]){
+            if(squares[a]&&squares[a]===squares[b]&&squares[a]===squares[c]){
                 return square[a];
             }
         }
