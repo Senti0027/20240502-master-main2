@@ -8,6 +8,8 @@ function MySlider({onChange}) {
       onChange(e.target.value);
     }
   };
+  
+
   return (
     <div>
       <input
