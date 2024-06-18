@@ -4,7 +4,10 @@ import './tictactoe.css';
 
 function Board({ xIsNext, squares, onPlay }) {//xTsNext:指示下一個下棋的玩家是 "X" 還是 "O"
     const handleClick = (i) => {//square:每個元素對應棋盤上的一個方格並儲存其值
-        const nextSquares = squares.slice()//onPlay:當某個方格被點擊時會被調用，並將更新後的 squares 陣列傳遞回去。
+        if (calculateWinner(squares) || squares[i]) {//onPlay:當某個方格被點擊時會被調用，並將更新後的 squares 陣列傳遞回去。
+            return;
+          }
+        const nextSquares = squares.slice()
         if (xIsNext) {
             nextSquares[i] = "X";
         }
@@ -13,7 +16,7 @@ function Board({ xIsNext, squares, onPlay }) {//xTsNext:指示下一個下棋的
         }
         onPlay(nextSquares);
     };
-    const calaulateWinner = (square) => {
+    const calculateWinner = (square) => {
         const lines = [
             [0, 1, 2],
             [3, 4, 5],
@@ -30,9 +33,13 @@ function Board({ xIsNext, squares, onPlay }) {//xTsNext:指示下一個下棋的
                 return square[a];
             }
         }
+        return null;
     };
 
-    let status = `下一位玩家: ${xIsNext ? "X" : "O"}`;
+    const winner = calculateWinner(squares);
+    let status = winner
+    ? `贏家: ${winner}`
+    : `下一個玩家: ${xIsNext ? "X" : "O"}`;
     return (
         <>
             <div className="status">{status}</div>
